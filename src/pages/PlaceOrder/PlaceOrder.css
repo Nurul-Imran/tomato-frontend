@@ -1,0 +1,44 @@
+#placeOrder {
+  padding: 80px 0;
+}
+.delivery_information h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.delivery_form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: space-between;
+}
+.address_part {
+  max-width: 600px;
+  width: 100%;
+}
+.address_part input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px 12px;
+  font-size: 15px;
+  outline: none;
+}
+.address_part .input_group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 12px;
+}
+.address_part .input_group input {
+  width: 49%;
+}
+
+/* Media Query For 575px */
+@media (max-width: 575px) {
+  .delivery_information h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  #placeOrder {
+    padding: 60px 0;
+  }
+}

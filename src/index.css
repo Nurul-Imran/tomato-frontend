@@ -1,0 +1,61 @@
+/* Common CSS Start Here */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  scroll-behavior: smooth;
+}
+img{
+  max-width: 100%;
+  object-fit: cover;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+ul, ol{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5, h6, p, span{
+  line-height: 1.1;
+}
+button{
+  cursor: pointer;
+  border: none;
+  text-transform: capitalize;
+}
+@media (min-width: 1600px) {
+  .container{
+    width: 1470px;
+    margin: 0 auto;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes opacitySmooth {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Common CSS Start End */

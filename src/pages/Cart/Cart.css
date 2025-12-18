@@ -1,0 +1,41 @@
+.cart_calculation_main_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+.cart_promo_main{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: gray;
+    max-width: 450px;
+    width: 100%;
+}
+.cart_promo_main p{
+    font-size: 14px;
+    margin: 0;
+}
+.cart_promo_main .input_group{
+    display: flex;
+    align-items: center;
+}
+.cart_promo_main .input_group input {
+    max-width: 240px;
+    width: 100%;
+    border: none;
+    background-color: #808080ca;
+    color: #dedada;
+    padding: 8px;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+}
+.cart_promo_main .input_group button {
+    border: none;
+    background-color: #000;
+    color: #fff;
+    padding: 8px 35px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}

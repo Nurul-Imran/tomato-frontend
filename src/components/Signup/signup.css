@@ -1,0 +1,107 @@
+@keyframes FadeIn {
+    from{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes FadeOut{
+    from { opacity: 1; transform: scale(1);}
+    to { opacity: 0; transform: scale(0.8);}
+}
+.fadeIn{
+    animation: FadeIn 0.5s ease-in-out forwards;
+}
+.fadeOut{
+    animation: FadeOut 0.5s ease-in-out forwards;
+}
+#signup{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.253);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup_content{
+    max-width: 380px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: none;
+    padding: 30px;
+    margin: 0 25px;
+}
+.signup_content .form_heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.form_heading h3{
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.form_heading .cross_icon{
+    cursor: pointer;
+    font-size: 22px;
+}
+.signup_content .form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+.signup_content .form>input{
+    padding: 10px;
+    outline: none;
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
+}
+.signup_content .form>input::placeholder{
+    font-size: 14px;
+    border-color: grey;
+}
+.signup_content .form > button{
+    width: 100%;
+    background-color: tomato;
+    padding: 10px;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+}
+.privacy_policy{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.privacy_policy>input{
+    width: 20px;
+    height: 20px;
+}
+.privacy_policy > p{
+    font-size: 16px;
+    color: grey;
+    margin: 0;
+}
+.signup_content .form_footer{
+    margin-top: 30px;
+}
+.signup_content .form_footer > p{
+    font-size: 16px;
+    margin: 0;
+    color: gray;
+}
+.signup_content .form_footer > p > span{
+    color: tomato;
+    cursor: pointer;
+}
