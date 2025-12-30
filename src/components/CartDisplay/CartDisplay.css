@@ -29,6 +29,35 @@ td > img{
     line-height: 140%;
 }
 
+.empty_cart_container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.empty_cart_message {
+    font-size: 16px;
+    color: #666;
+    margin: 15px 0 30px;
+}
+
+.shop_button {
+    display: inline-block;
+    background: linear-gradient(180deg, #0ea5a4, #0f766e);
+    color: white;
+    padding: 12px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.shop_button:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
 @media (max-width: 575px) {
     #cart_display{
         padding: 60px 0;

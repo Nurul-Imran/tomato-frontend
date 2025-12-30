@@ -12,6 +12,7 @@ const StoreContextProvider = ({children}) => {
     const [cartItems, setCartItems] = useState({});
     const [total, setTotal] = useState(0);
     const [foodList, setFoodList] = useState([]);
+    const [category, setCategory] = useState("all");
 
     
     // AddToCart
@@ -62,7 +63,9 @@ const StoreContextProvider = ({children}) => {
         token,
         setToken, 
         isOpenSignUp, 
-        setIsOpenSignUp
+        setIsOpenSignUp,
+        category,
+        setCategory
     }
 
     const loadFoodItems = () => {

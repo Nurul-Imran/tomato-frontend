@@ -18,7 +18,7 @@ const MenuRight = ({activeMenu, setActiveMenu, setIsOpenSignUp, isSignupButtonAc
   return (
     <div className="menu_right">
       <div className="search_icon">
-        <img src={assets.search_icon} alt="Search Icon" />
+        <Link to='/foods'><img src={assets.search_icon} alt="Search Icon" /></Link>
       </div>
       {
         localStorage.getItem("token") && (

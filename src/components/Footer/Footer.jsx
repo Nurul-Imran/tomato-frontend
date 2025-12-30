@@ -35,13 +35,13 @@ const Footer = () => {
                     <div className="footer_right">
                         <h4>GET IN TOUCH</h4>
                         <ul className="footer_menu">
-                            <li>+1-212-4585-9586</li>
-                            <li>coderWorld@gmail.com</li>
+                            <li>+0186291****</li>
+                            <li>coderimran@gamil.com</li>
                         </ul>
                     </div>
                 </div>
                 <div className="footer_copyright">
-                    <p>Copyright 2024 c Tomato.com - All Right Reserved</p>
+                    <p>Copyright 2025 c Nurul Imran - All Right Reserved</p>
                 </div>
             </div>
         </footer>

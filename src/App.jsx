@@ -14,6 +14,7 @@ import { storeContext } from './context/storeContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Verify from './pages/Verify/VerifyOrder.jsx';
 import Order from './pages/Order/Order';
+import Foods from './pages/Foods/Foods.jsx';
 
 const App = () => {
   const { isOpenSignUp, setIsOpenSignUp } = useContext(storeContext)
@@ -36,6 +37,7 @@ const App = () => {
             <Order />
           </ProtectedRoute>
         } />
+        <Route path='/foods' element={<Foods />} />
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />

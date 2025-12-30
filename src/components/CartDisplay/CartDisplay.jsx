@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import './CartDisplay.css'
 import { storeContext } from '../../context/storeContext';
@@ -45,7 +46,13 @@ const CartDisplay = () => {
                             </table>
                         </div>
 
-                    ): <h2 className='No_cart_item_heading'>No Cart Item Here. If You Want To Order Food, Then Fristly Add To Cart Food Sir.</h2>
+                    ): (
+                        <div className="empty_cart_container">
+                            <h2 className='No_cart_item_heading'>No Cart Item Available</h2>
+                            <p className='empty_cart_message'>Your cart is empty. Start adding items to your order!</p>
+                            <Link to="/foods" className='shop_button'>Continue Shopping</Link>
+                        </div>
+                    )
                 }
             </div>
         </section>

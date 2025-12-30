@@ -40,9 +40,15 @@ function Order() {
             <div className='container'>
                 <div className="order_wrapper">
                     <h3>my orders</h3>
-                    {loading && <p>Loading orders...</p>}
+                    {loading && <div className='loading_orders'>
+                        <div className='loading_spinner_orders'></div>
+                        <p>Fetching your orders...</p>
+                    </div>}
                     {error && <p className='error'>{error}</p>}
-                    {orders.length === 0 && <p>No orders yet.</p>}
+                    {!loading && orders.length === 0 && <div className='no_orders_message'>
+                        <p>You haven't placed any orders yet.</p>
+                        <p className='sub_text'>Start ordering your favorite food now!</p>
+                    </div>}
                     <div className='orders_list'>
                         {orders.length > 0 && orders.map((order, index) => {
                             let totalItems = 0;

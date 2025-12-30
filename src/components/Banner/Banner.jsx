@@ -2,6 +2,7 @@ import React from "react";
 import "./Banner.css";
 
 import { assets } from '../../assets/assets';
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -19,7 +20,7 @@ const Banner = () => {
               cravings and elevate your dining experience. One delicious meal of
               a time.
             </p>
-            <button>view menu</button>
+            <button><Link to='/foods'>view menu</Link></button>
           </div>
         </div>
       </div>

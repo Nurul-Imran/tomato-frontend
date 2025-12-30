@@ -55,30 +55,48 @@ const Navbar = ({ setIsOpenSignUp }) => {
   }, [isSideMenuOpen]);
 
   useEffect(() => {
+    // More robust scroll spy: use getBoundingClientRect and run on scroll + resize
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const offset = window.innerHeight * 0.2; // 20% of screen height
-      const footerOffset = window.innerHeight * 0.5; // detect footer earlier
+      const offset = window.innerHeight * 0.2; // 20% of viewport height
+      const footerOffset = window.innerHeight * 0.5; // larger threshold for footer
 
       const menu = document.getElementById("explore_menu");
       const mobileApp = document.getElementById("download_app");
       const contact = document.getElementById("footer");
 
-      if (!menu || !mobileApp || !contact) return;
+      // If sections aren't rendered yet, default to home
+      if (!menu && !mobileApp && !contact) {
+        setActiveMenu("home");
+        return;
+      }
 
-      if (scrollY >= contact.offsetTop - footerOffset) {
+      // Helper to get top distance from viewport (fallback to large positive number)
+      const topOrLarge = (el) => (el ? el.getBoundingClientRect().top : Number.POSITIVE_INFINITY);
+
+      const menuTop = topOrLarge(menu);
+      const mobileTop = topOrLarge(mobileApp);
+      const contactTop = topOrLarge(contact);
+
+      // Check in order of priority: contact -> mobileApp -> menu -> home
+      if (contactTop <= footerOffset) {
         setActiveMenu("contact-us");
-      } else if (scrollY >= mobileApp.offsetTop - offset) {
+      } else if (mobileTop <= offset) {
         setActiveMenu("mobile-app");
-      } else if (scrollY >= menu.offsetTop - offset) {
+      } else if (menuTop <= offset) {
         setActiveMenu("menu");
       } else {
         setActiveMenu("home");
       }
     };
 
+    // Run once to initialize state and also on resize
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   useEffect(() => {}, [token]);
