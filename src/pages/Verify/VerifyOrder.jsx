@@ -14,7 +14,7 @@ const Verify = () => {
         try {
             const res = await api.post('/order/verify', {success, orderId});
             if (res.data.success) {
-                navigate('/order');
+                navigate('/');
             }else{
                 navigate('/');
             }
