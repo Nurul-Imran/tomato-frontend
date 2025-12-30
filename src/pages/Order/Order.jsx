@@ -11,6 +11,7 @@ function Order() {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [expandedOrder, setExpandedOrder] = useState(null);
 
     let mounted = true;
     const fetchOrders = async () => {
@@ -59,7 +60,10 @@ function Order() {
                                 </h4>
                                 <div className="order_details">
                                     <img src={assets.parcel_icon} alt="Parcel Icon Image" />
-                                    <span className="food_titles">
+                                    <span 
+                                        className={`food_titles ${expandedOrder === index ? 'expanded' : ''}`}
+                                        onClick={() => setExpandedOrder(expandedOrder === index ? null : index)}
+                                    >
                                         {order.items.map((item, index) => {
                                             totalItems += item.quantity;
                                             if (index === (order.items.length - 1)) return item.name + ' x ' + item.quantity;

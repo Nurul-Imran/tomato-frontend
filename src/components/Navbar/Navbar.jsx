@@ -10,7 +10,7 @@ import DesktopMenu from "../DesktopMenu";
 import MenuRight from "../MenuRight";
 
 const Navbar = ({ setIsOpenSignUp }) => {
-  const { cartItems, token } = useContext(storeContext);
+  const { token } = useContext(storeContext);
   const [activeMenu, setActiveMenu] = useState("home");
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -83,6 +83,10 @@ const Navbar = ({ setIsOpenSignUp }) => {
 
   useEffect(() => {}, [token]);
 
+  const isSignupButtonActive = () => {
+    setIsSideMenuOpen(false);
+  }
+
   return (
     <nav id="nav" className={`${scrolled ? "scrolled" : ""}`}>
       <div className="container">
@@ -102,7 +106,7 @@ const Navbar = ({ setIsOpenSignUp }) => {
             </Link>
           </div>
           <DesktopMenu activeMenu={activeMenu} />
-          <MenuRight activeMenu={activeMenu} setActiveMenu={setActiveMenu} cartItems={cartItems} setIsOpenSignUp={setIsOpenSignUp} />
+          <MenuRight isSignupButtonActive={isSignupButtonActive}  activeMenu={activeMenu} setActiveMenu={setActiveMenu} setIsOpenSignUp={setIsOpenSignUp} />
           {/* Mobile Side Menu */}
           <div className="side_menu_bar">
             <IoMenu
@@ -117,7 +121,7 @@ const Navbar = ({ setIsOpenSignUp }) => {
                 className={`side_menu ${sideMenuClosing ? "closed" : "opened"}`}
               >
                 <DesktopMenu activeMenu={activeMenu} />
-                <MenuRight activeMenu={activeMenu} setActiveMenu={setActiveMenu} cartItems={cartItems} setIsOpenSignUp={setIsOpenSignUp} />
+                <MenuRight isSignupButtonActive={isSignupButtonActive} activeMenu={activeMenu} setActiveMenu={setActiveMenu} setIsOpenSignUp={setIsOpenSignUp} />
                 <div className="cross">
                   <ImCross onClick={handleSideMenuClose} />
                 </div>

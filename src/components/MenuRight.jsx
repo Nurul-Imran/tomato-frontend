@@ -7,9 +7,14 @@ import { toast } from "react-toastify";
 import { useContext } from "react";
 import { storeContext } from "../context/storeContext";
 
-const MenuRight = ({activeMenu, setActiveMenu, cartItems, setIsOpenSignUp}) => {
-  const { setToken } = useContext(storeContext);
+const MenuRight = ({activeMenu, setActiveMenu, setIsOpenSignUp, isSignupButtonActive}) => {
+  const { setToken, cartItems } = useContext(storeContext);
   const navigate = useNavigate();
+
+  const handleSignUp = () => {
+    setIsOpenSignUp(true);
+    isSignupButtonActive();
+  } 
   return (
     <div className="menu_right">
       <div className="search_icon">
@@ -59,7 +64,7 @@ const MenuRight = ({activeMenu, setActiveMenu, cartItems, setIsOpenSignUp}) => {
           </div>
         </div>
       ) : (
-        <button onClick={() => setIsOpenSignUp(true)}>Sign in</button>
+        <button onClick={handleSignUp}>Sign in</button>
       )}
     </div>
   );

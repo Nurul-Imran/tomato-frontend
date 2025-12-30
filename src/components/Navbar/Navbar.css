@@ -157,6 +157,13 @@
 }
 
 @media (max-width: 991px) {
+
+  /* menu right profile dropdonw */
+  .profile_dropdown{
+    border-radius: 0;
+    transform: translateX(100%) !important;
+  }
+
   .side_menu_bar {
     font-size: 35px;
     cursor: pointer;

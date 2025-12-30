@@ -50,9 +50,24 @@
 .food_titles {
 	font-size: 0.95rem;
 	color: #111827;
-	/* white-space: nowrap;
+	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis; */
+	text-overflow: ellipsis;
+	min-width: 200px;
+	flex: 1;
+	cursor: pointer;
+	position: relative;
+	transition: all 0.3s linear;
+}
+
+.food_titles.expanded {
+	white-space: normal;
+	overflow: visible;
+	text-overflow: clip;
+	background: #f9fafb;
+	padding: 8px 10px;
+	border-radius: 6px;
+	z-index: 10;
 }
 
 .total {
@@ -74,6 +89,7 @@
 	color: #374151;
 	background: #f3f4f6;
 	border: 1px solid rgba(2,6,23,0.04);
+	text-align: center;
 }
 
 .order_details > .track_btn {
@@ -96,12 +112,6 @@
 	padding: 0.5rem 0.75rem;
 	border-radius: 6px;
 	display: inline-block;
-}
-
-@media (min-width: 992px) {
-    .food_titles{
-	    flex: 1;
-    }
 }
 
 
