@@ -8,7 +8,7 @@ import { storeContext } from '../../context/storeContext.jsx';
 
 const Signup = ({setIsOpenSignUp}) => {
     const { setToken } = useContext(storeContext);
-    const [isLogin, setIsLogin] = useState(true);
+    const [isLogin, setIsLogin] = useState(false);
     const [closing, setClosing] = useState(false);
     const [checked, setChecked] = useState(false);
     const [formData, setFormData] = useState({

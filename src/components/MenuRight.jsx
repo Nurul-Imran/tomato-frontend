@@ -64,7 +64,7 @@ const MenuRight = ({activeMenu, setActiveMenu, setIsOpenSignUp, isSignupButtonAc
           </div>
         </div>
       ) : (
-        <button onClick={handleSignUp}>Sign in</button>
+        <button onClick={handleSignUp}>Sign Up</button>
       )}
     </div>
   );
