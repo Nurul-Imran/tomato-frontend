@@ -59,7 +59,7 @@ const FoodDisplay = ({ searchTerm = '', selectedCategory = null }) => {
         setPageIndex(0);
     }, [searchTerm, selectedCategory]);
 
-    useEffect(() => {}, [category, foodList])
+    // useEffect(() => {}, [category, foodList])
     return (
         <section id="food_display">
             <div className="container">
