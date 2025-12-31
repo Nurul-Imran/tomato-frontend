@@ -45,10 +45,12 @@ const FoodDisplay = ({ searchTerm = '', selectedCategory = null }) => {
         const onResize = () => {
             const newSize = getPageSize(window.innerWidth);
             setPageSize(prev => {
-                if (prev !== newSize) return newSize;
+                if (prev !== newSize) {
+                    setPageIndex(0);
+                    return newSize;
+                } 
                 return prev;
             });
-            setPageIndex(0);
         };
         window.addEventListener('resize', onResize);
         return () => window.removeEventListener('resize', onResize);
@@ -57,9 +59,8 @@ const FoodDisplay = ({ searchTerm = '', selectedCategory = null }) => {
     // reset page when filters/search change
     useEffect(() => {
         setPageIndex(0);
-    }, [searchTerm, selectedCategory]);
+    }, [searchTerm, activeCategory]);
 
-    // useEffect(() => {}, [category, foodList])
     return (
         <section id="food_display">
             <div className="container">
