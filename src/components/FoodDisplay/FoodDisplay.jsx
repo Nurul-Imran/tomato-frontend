@@ -57,7 +57,9 @@ const FoodDisplay = ({ searchTerm = '', selectedCategory = null }) => {
     // reset page when filters/search change
     useEffect(() => {
         setPageIndex(0);
-    }, [searchTerm, selectedCategory, category, foodList]);
+    }, [searchTerm, selectedCategory]);
+
+    useEffect(() => {}, [category, foodList])
     return (
         <section id="food_display">
             <div className="container">
